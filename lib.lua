@@ -16,11 +16,8 @@ ProtectGui(ScreenGui);
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 ScreenGui.Parent = (gethui and gethui()) or CoreGui;
 
-local toggles = {};
-local options = {};
-
-getgenv().toggles = toggles;
-getgenv().options = options;
+local Toggles = {};
+local Options = {};
 
 local Library = {
     Registry = {};
@@ -683,7 +680,7 @@ do
         ColorPicker:Display();
         ColorPicker.DisplayFrame = DisplayFrame
 
-        options[Idx] = ColorPicker;
+        Options[Idx] = ColorPicker;
 
         return self;
     end;
@@ -699,10 +696,10 @@ do
             Mode = Info.Mode or 'Toggle'; -- Always, Toggle, Hold
             Type = 'KeyPicker';
 
-            Synctogglestate = Info.Synctogglestate or false;
+            SyncTogglestate = Info.SyncTogglestate or false;
         };
 
-        if KeyPicker.Synctogglestate then
+        if KeyPicker.SyncTogglestate then
             Info.Modes = { 'Toggle' }
             Info.Mode = 'Toggle'
         end
@@ -895,7 +892,7 @@ do
         end
 
         function KeyPicker:DoClick()
-            if ParentObj.Type == 'Toggle' and KeyPicker.Synctogglestate then
+            if ParentObj.Type == 'Toggle' and KeyPicker.SyncTogglestate then
                 ParentObj:SetValue(not ParentObj.Value)
             end
 
@@ -998,7 +995,7 @@ do
 
         KeyPicker:Update();
 
-        options[Idx] = KeyPicker;
+        Options[Idx] = KeyPicker;
 
         return self;
     end;
@@ -1417,7 +1414,7 @@ do
         Groupbox:AddBlank(5);
         Groupbox:Resize();
 
-        options[Idx] = Textbox;
+        Options[Idx] = Textbox;
 
         return Textbox;
     end;
@@ -1516,7 +1513,7 @@ do
             Toggle:Display();
 
             for _, Addon in next, Toggle.Addons do
-                if Addon.Type == 'KeyPicker' and Addon.Synctogglestate then
+                if Addon.Type == 'KeyPicker' and Addon.SyncTogglestate then
                     Addon.Toggled = Bool
                     Addon:Update()
                 end
@@ -1542,7 +1539,7 @@ do
         Toggle.Container = Container;
         setmetatable(Toggle, BaseAddons);
 
-        toggles[Idx] = Toggle;
+        Toggles[Idx] = Toggle;
 
         return Toggle;
     end;
@@ -1732,7 +1729,7 @@ do
         Groupbox:AddBlank(Info.BlankSize or 6);
         Groupbox:Resize();
 
-        options[Idx] = Slider;
+        Options[Idx] = Slider;
 
         return Slider;
     end;
@@ -2144,7 +2141,7 @@ do
         Groupbox:AddBlank(Info.BlankSize or 5);
         Groupbox:Resize();
 
-        options[Idx] = Dropdown;
+        Options[Idx] = Dropdown;
 
         return Dropdown;
     end;
@@ -3032,7 +3029,7 @@ function Library:CreateWindow(...)
         if Input:IsModifierKeyDown(Enum.ModifierKey.Ctrl) and Outer.Visible then
             local HoveringColorPicker = nil
 
-            for i, colorPicker in next, options do
+            for i, colorPicker in next, Options do
                 if colorPicker.Type == 'ColorPicker' then
                     local displayFrame = colorPicker.DisplayFrame
                     local tabFrame = displayFrame and displayFrame:findFirstAncestor('TabFrame')
@@ -3063,4 +3060,4 @@ function Library:CreateWindow(...)
     return Window;
 end;
 
-return Library
+return Library, Options, Toggles
