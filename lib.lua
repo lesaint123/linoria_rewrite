@@ -27,7 +27,6 @@ local Library = {
 
     FontColor = Color3.fromRGB(70, 70, 70);
     MainColor = Color3.fromRGB(10, 10, 10);
-    SelectedTabColor = Color3.fromRGB(10, 10, 10);
     BackgroundColor = Color3.fromRGB(15, 15, 15);
     AccentColor = Color3.fromRGB(40, 40, 80);
     OutlineColor = Color3.fromRGB(20, 20, 20);
@@ -2586,7 +2585,7 @@ function Library:CreateWindow(...)
         });
 
         local Blocker = Library:Create('Frame', {
-            BackgroundColor3 = Library.SelectedTabColor;
+            BackgroundColor3 = Library.MainColor;
             BorderSizePixel = 0;
             Position = UDim2.new(0, 0, 1, 0);
             Size = UDim2.new(1, 0, 0, 1);
@@ -2596,7 +2595,7 @@ function Library:CreateWindow(...)
         });
 
         Library:AddToRegistry(Blocker, {
-            BackgroundColor3 = 'SelectedTabColor';
+            BackgroundColor3 = 'MainColor';
         });
 
         local TabFrame = Library:Create('Frame', {
@@ -2646,12 +2645,12 @@ function Library:CreateWindow(...)
 
             TabFrame.Visible = true;
             Blocker.BackgroundTransparency = 0;
-            TabButton.BackgroundColor3 = Library.SelectedTabColor;
+            TabButton.BackgroundColor3 = Library.MainColor;
             TabButtonLabel.TextColor3 = Library.AccentColor;
             Highlight.BackgroundColor3 = Library.AccentColor;
             Highlight.ZIndex = 3;
             Highlight.Visible = true;
-            Library.RegistryMap[TabButton].Properties.BackgroundColor3 = 'SelectedTabColor';
+            Library.RegistryMap[TabButton].Properties.BackgroundColor3 = 'MainColor';
             TabFrame.Visible = true;
         end;
 
