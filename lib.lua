@@ -1550,15 +1550,6 @@ do
     function Funcs:AddSlider(Idx, Info)
         assert(Info.Default and Info.Text and Info.Min and Info.Max and Info.Rounding, 'Bad Slider Data');
 
-        local Slider = {
-            Value = Info.Default;
-            Min = Info.Min;
-            Max = Info.Max;
-            Rounding = Info.Rounding;
-            MaxSize = 232;
-            Type = 'Slider';
-        };
-
         local Groupbox = self;
         local Container = Groupbox.Container;
 
@@ -1582,6 +1573,15 @@ do
             ZIndex = 5;
             Parent = Container;
         });
+
+        local Slider = {
+            Value = Info.Default;
+            Min = Info.Min;
+            Max = Info.Max;
+            Rounding = Info.Rounding;
+            MaxSize = SliderOuter.AbsoluteSize.X;
+            Type = 'Slider';
+        };
 
         Library:AddToRegistry(SliderOuter, {
             BorderColor3 = 'Black';
