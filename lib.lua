@@ -1579,7 +1579,7 @@ do
             Min = Info.Min;
             Max = Info.Max;
             Rounding = Info.Rounding;
-            MaxSize = SliderOuter.AbsoluteSize.X - 1;
+            MaxSize = SliderOuter.AbsoluteSize.X - 3;
             Type = 'Slider';
         };
 
