@@ -14,7 +14,7 @@ local ScreenGui = Instance.new('ScreenGui');
 ProtectGui(ScreenGui);
 
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
-ScreenGui.Parent = CoreGui;
+ScreenGui.Parent = (gethui and gethui()) or CoreGui;
 
 local toggles = {};
 local options = {};
@@ -28,8 +28,8 @@ local Library = {
 
     HudRegistry = {};
 
-    FontColor = Color3.fromRGB(118, 118, 118);
-    FontColor2 = Color3.fromRGB(198, 198, 198);
+    FontColor = Color3.fromRGB(110, 110, 110);
+    FontColor2 = Color3.fromRGB(110, 110, 110);
     MainColor = Color3.fromRGB(11, 11, 11);
     SelectedTabColor = Color3.fromRGB(23, 23, 23);
     BackgroundColor = Color3.fromRGB(15, 15, 15);
