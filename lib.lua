@@ -32,7 +32,7 @@ local Library = {
     MainColor = Color3.fromRGB(10, 10, 10);
     SelectedTabColor = Color3.fromRGB(25, 25, 25);
     BackgroundColor = Color3.fromRGB(15, 15, 15);
-    AccentColor = Color3.fromRGB(70, 60, 100);
+    AccentColor = Color3.fromRGB(30, 30, 60);
     OutlineColor = Color3.fromRGB(25, 25, 25);
 
     Black = Color3.new(0, 0, 0);
