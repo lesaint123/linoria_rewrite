@@ -28,13 +28,12 @@ local Library = {
 
     HudRegistry = {};
 
-    FontColor = Color3.fromRGB(110, 110, 110);
-    FontColor2 = Color3.fromRGB(110, 110, 110);
-    MainColor = Color3.fromRGB(11, 11, 11);
-    SelectedTabColor = Color3.fromRGB(23, 23, 23);
+    FontColor = Color3.fromRGB(100, 100, 100);
+    MainColor = Color3.fromRGB(5, 5, 5);
+    SelectedTabColor = Color3.fromRGB(25, 25, 25);
     BackgroundColor = Color3.fromRGB(15, 15, 15);
     AccentColor = Color3.fromRGB(70, 60, 100);
-    OutlineColor = Color3.fromRGB(25, 25, 25);
+    OutlineColor = Color3.fromRGB(30, 30, 30);
 
     Black = Color3.new(0, 0, 0);
 
@@ -88,7 +87,7 @@ function Library:CreateLabel(Properties, IsHud)
     local _Instance = Library:Create('TextLabel', {
         BackgroundTransparency = 1;
         Font = Enum.Font.Code;
-        TextColor3 = Library.FontColor or Library.AccentColor;
+        TextColor3 = Library.FontColor;
         TextSize = 16;
         TextStrokeTransparency = 0;
     });
@@ -104,7 +103,7 @@ function Library:CreateLabel2(Properties, IsHud)
     local _Instance = Library:Create('TextLabel', {
         BackgroundTransparency = 1;
         Font = Enum.Font.Code;
-        TextColor3 = Library.FontColor2;
+        TextColor3 = Library.FontColor;
         TextSize = 16;
         TextStrokeTransparency = 0;
     });
