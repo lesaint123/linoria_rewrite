@@ -27,7 +27,7 @@ local Library = {
 
     FontColor = Color3.fromRGB(70, 70, 70);
     MainColor = Color3.fromRGB(10, 10, 10);
-    SelectedTabColor = Color3.fromRGB(20, 20, 20);
+    SelectedTabColor = Color3.fromRGB(10, 10, 10);
     BackgroundColor = Color3.fromRGB(15, 15, 15);
     AccentColor = Color3.fromRGB(40, 40, 80);
     OutlineColor = Color3.fromRGB(20, 20, 20);
@@ -1576,7 +1576,7 @@ do
             Min = Info.Min;
             Max = Info.Max;
             Rounding = Info.Rounding;
-            MaxSize = SliderOuter.AbsoluteSize.X - 3;
+            MaxSize = SliderOuter.AbsoluteSize.X - 2;
             Type = 'Slider';
         };
 
