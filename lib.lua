@@ -1135,19 +1135,18 @@ do
             
             local Outer = ButtonOuter:Clone()
             local Inner = Outer.Frame;
-            Inner:FindFirstChildWhichIsA('TextLabel'):Destroy()
 
             Outer.Position = UDim2.new(1, 2, 0, 0)
             Outer.Size = UDim2.fromOffset(ButtonOuter.AbsoluteSize.X - 2, ButtonOuter.AbsoluteSize.Y)
             Outer.Parent = ButtonOuter
 
-            local Label = Library:CreateLabel({
-                Size = UDim2.new(1, 0, 1, 0);
-                TextSize = 14;
-                Text = Text;
-                ZIndex = 6;
-                Parent = Inner;
-            });
+            -- local Label = Library:CreateLabel({
+            --     Size = UDim2.new(1, 0, 1, 0);
+            --     TextSize = 14;
+            --     Text = Text;
+            --     ZIndex = 6;
+            --     Parent = Inner;
+            -- });
 
             Library:AddToRegistry(Inner, {
                 BackgroundColor3 = 'MainColor';
