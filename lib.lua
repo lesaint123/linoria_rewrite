@@ -1141,7 +1141,7 @@ do
             Outer.Size = UDim2.fromOffset(ButtonOuter.AbsoluteSize.X - 2, ButtonOuter.AbsoluteSize.Y)
             Outer.Parent = ButtonOuter
 
-            local ButtonLabel = Library:CreateLabel({
+            local Label = Library:CreateLabel({
                 Size = UDim2.new(1, 0, 1, 0);
                 TextSize = 14;
                 Text = Text;
